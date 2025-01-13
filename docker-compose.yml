@@ -22,7 +22,7 @@ services:
 
   another_serice:
     build:
-      dockerfile: service_clone/Dockerfile
+      dockerfile: ./service_clone/Dockerfile
     container_name: another_service
     ports:
       - 8001:8000
