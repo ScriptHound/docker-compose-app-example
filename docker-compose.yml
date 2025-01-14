@@ -1,15 +1,5 @@
 version: "3.9"
 services:
-  dog-backend:
-    build: .
-    container_name: dog-backend
-    ports:
-      - "8000:8000"
-    env_file:
-      - .env_example
-    depends_on:
-      - database
-
   database:
     image: postgres:15
     container_name: database
@@ -20,5 +10,16 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
 
+  database_two:
+    image: postgres:15
+    container_name: database
+    env_file:
+      - .env_example
+    ports:
+      - "5433:5433"
+    volumes:
+      - postgres_data_two:/var/lib/postgresql/data
+
 volumes:
   postgres_data:
+  postgres_data_two:
