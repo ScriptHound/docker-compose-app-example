@@ -6,7 +6,4 @@ RUN apt-get update && apt-get install -y --no-install-recommends build-essential
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 EXPOSE 8000
-RUN ls
-RUN pwd
-RUN ls /src/
 CMD ["python", "/src/main.py"]
