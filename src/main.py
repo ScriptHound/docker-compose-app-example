@@ -33,4 +33,4 @@ async def create_dog(dog: Dog, dog_repo: DogRepository = Depends(get_dog_reposit
 
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    uvicorn.run('main:app', host="0.0.0.0", port=8000, reload=True)

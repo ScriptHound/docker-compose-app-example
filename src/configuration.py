@@ -3,10 +3,13 @@ from pydantic_settings import BaseSettings
 
 
 class AppSettings(BaseSettings):
-    database_url: str = Field(..., env="DATABASE_URL")
+    database_url: str
+    postgres_user: str
+    postgres_password: str
+    postgres_db: str
 
     class Config:
-        env_file = ".env_example"
+        env_file = "../.env_example"
         env_file_encoding = "utf-8"
 
 
