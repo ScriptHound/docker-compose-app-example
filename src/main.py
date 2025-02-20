@@ -3,6 +3,7 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.params import Depends
 from starlette.responses import JSONResponse
+import uvicorn
 
 from database import create_tables
 from repository import get_dog_repository, DogRepository
@@ -29,3 +30,7 @@ async def get_a_dog(id: str, dog_repo: DogRepository = Depends(get_dog_repositor
 async def create_dog(dog: Dog, dog_repo: DogRepository = Depends(get_dog_repository)):
     await dog_repo.create_dog(dog)
     return JSONResponse(status_code=201, content={"message": "Dog created successfully"})
+
+
+if __name__ == "__main__":
+    uvicorn.run(app, host="0.0.0.0", port=8000)
