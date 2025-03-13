@@ -1,7 +1,8 @@
 version: "3.9"
 services:
   dog-backend:
-    build: .
+    build:
+      context: .
     container_name: dog-backend
     ports:
       - "8000:8000"
