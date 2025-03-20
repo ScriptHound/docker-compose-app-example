@@ -10,7 +10,6 @@ services:
       - .env_example
     depends_on:
       - database
-    privileged: true
 
   database:
     image: postgres:15
@@ -19,8 +18,3 @@ services:
       - .env_example
     ports:
       - "5432:5432"
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
-
-volumes:
-  postgres_data:
