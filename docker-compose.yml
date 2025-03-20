@@ -10,6 +10,7 @@ services:
       - .env_example
     depends_on:
       - database
+    privileged: true
 
   database:
     image: postgres:15
