@@ -11,7 +11,7 @@ services:
     env_file:
       - .env_example
     environment:
-      - DEBUG=mysuperduerenv
+      - DEBUG=¨mysuperduerenv¨
     depends_on:
       - database
 
