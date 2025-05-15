@@ -3,6 +3,7 @@ services:
   dog-backend:
     build:
       context: .
+      dockerfile: ./Dockerfile
       args:
         DOCKER_BUILDKIT: 1
     container_name: dog-backend
